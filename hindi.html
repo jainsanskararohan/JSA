@@ -9,6 +9,42 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    #dashboard-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #ffffff;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 14px;
+  z-index: 9999;
+  animation: fadeIn 1s ease;
+}
+
+#dashboard-popup a {
+  display: inline-block;
+  margin-top: 8px;
+  background: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
     :root {
       --color-jain-primary: #1e4537;
       --color-jain-secondary: #d1fae5;
@@ -514,5 +550,10 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
+    <div id="dashboard-popup">
+  <span id="close-btn">&times;</span>
+  <p>हमारा डैशबोर्ड देखें</p>
+  <a href="https://jainsanskararohan.github.io/dashboard/" target="_blank">डैशबोर्ड पर जाएँ</a>
+</div>
 </body>
 </html>
